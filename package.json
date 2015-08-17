@@ -1,0 +1,48 @@
+{
+  "name": "get-media-size",
+  "version": "0.5.1",
+  "description": "Get the real size of an (already-loaded) <img>, <video>, or <canvas> in the browser.",
+  "license": "MIT",
+  "repository": "bfred-it/get-media-size",
+  "author": {
+    "name": "Federico Brigante",
+    "email": "bfred-it@users.noreply.github.com",
+    "url": "twitter.com/bfred_it"
+  },
+  "keywords": [
+    "browser",
+    "dom",
+    "media",
+    "img",
+    "image",
+    "video",
+    "canvas",
+    "context"
+  ],
+  "files": [
+    "index.js",
+    "dist/get-media-size.node.js"
+  ],
+  "main": "dist/get-media-size.node.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "npm run es5 && npm run export && npm run minify",
+    "export": "browserify index.js --standalone getMediaSize > dist/get-media-size.js",
+    "minify": "uglifyjs dist/get-media-size.js > dist/get-media-size.min.js",
+    "es5": "babel index.js > dist/get-media-size.node.js",
+    "prepublish": "npm run es5"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.1",
+    "uglifyjs": "^2.4.10"
+  }
+}
