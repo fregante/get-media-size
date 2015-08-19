@@ -1,4 +1,4 @@
-# get-media-size [![module size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.min.js) ![module gzipped size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.min.js?compression=gzip)](https://github.com/bfred-it/get-media-size/blob/master/dist/get-media-size.min.js)
+# get-media-size [![module size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.node.min.js) ![module gzipped size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.node.min.js?compression=gzip)](https://github.com/bfred-it/get-media-size/blob/master/dist/get-media-size.min.js)
 
 > Get the real size of an (already-loaded) `<img>`, `<video>`, or `<canvas>` in the browser.
 
@@ -66,6 +66,7 @@ Here's an explanation of the files included in this repo
 * `dist/get-media-size.js`: browser-ready file with AMD or a global variable called `getMediaSize`
 * `dist/get-media-size.min.js`: same as above, minified
 * `dist/get-media-size.node.js`: used by node/browserify with `require('get-media-size')`
+* `dist/get-media-size.node.min.js`: same as above, but minified, for byte counting only
 
 ## Dependencies
 
