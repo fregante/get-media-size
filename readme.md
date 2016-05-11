@@ -1,4 +1,4 @@
-# get-media-size [![module size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.node.min.js) ![module gzipped size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.node.min.js?compression=gzip)](https://github.com/bfred-it/get-media-size/blob/master/dist/get-media-size.min.js)
+# get-media-size [![module gzipped size](https://badge-size.herokuapp.com/bfred-it/get-media-size/master/dist/get-media-size.node.min.js?compression=gzip)](https://github.com/bfred-it/get-media-size/blob/master/dist/get-media-size.min.js)
 
 > Get the real size of an (already-loaded) `<img>`, `<video>`, or `<canvas>` in the browser.
 
