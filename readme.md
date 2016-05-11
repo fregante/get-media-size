@@ -29,13 +29,10 @@ video.src = 'http://media.w3.org/2010/05/sintel/trailer.mp4';
 On canvas
 
 ```js
-var canvas = document.createElement('canvas')
-console.log(getMediaSize(canvas)); // it works with both the canvas element
-//==> {width: 300, height: 150}
-
+var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
-console.log(getMediaSize(ctx)); // and the context object
-//==> {width: 300, height: 150}
+var canvasSize = getMediaSize(canvas); // it works with either the canvas element
+var canvasSize = getMediaSize(ctx); // or the context object
 ```
 
 ## With browserify
@@ -63,10 +60,8 @@ parameter | description
 Here's an explanation of the files included in this repo
 
 * `index.js`: source file, in ES6
-* `dist/get-media-size.js`: browser-ready file with AMD or a global variable called `getMediaSize`
-* `dist/get-media-size.min.js`: same as above, minified
+* `dist/get-media-size.min.js`: browser-ready file with AMD or a global variable called `getMediaSize`
 * `dist/get-media-size.node.js`: used by node/browserify with `require('get-media-size')`
-* `dist/get-media-size.node.min.js`: same as above, but minified, for byte counting only
 
 ## Dependencies
 
