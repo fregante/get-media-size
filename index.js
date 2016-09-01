@@ -6,7 +6,8 @@
  * @param  {number} scale                     Optional. Convenience feature to transform the size if you're using retina canvas, for example
  * @return {object}                           Contains width and height of the passed media
  */
-export default function (media, scale) {
+
+function getMediaSize(media, scale) {
 	if (!media) {
 		return {
 			width: 0,
@@ -30,3 +31,25 @@ export default function (media, scale) {
 
 	return size;
 }
+
+export default function getMediaSizeAsync(media, scale) {
+	return new Promise(resolve => {
+		const instantSize = getMediaSize(media, scale);
+		if (instantSize.width) {
+			return resolve(instantSize);
+		}
+		if (media instanceof HTMLVideoElement) {
+			return media.addEventListener('loadedmetadata', () => resolve(getMediaSize(media, scale)));
+		}
+		setTimeout(function check() {
+			const size = getMediaSize(media, scale);
+			if (size.width) {
+				resolve(size);
+			} else {
+				setTimeout(check, 100);
+			}
+		}, 100);
+	});
+}
+
+getMediaSizeAsync.sync = getMediaSize;

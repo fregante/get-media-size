@@ -1,0 +1,2 @@
+/*! npm.im/get-media-size */
+var getMediaSize=function(){"use strict";function t(t,e){if(!t)return{width:0,height:0};t.canvas&&(t=t.canvas);var i={width:t.getContext?t.width:t.naturalWidth||t.videoWidth,height:t.getContext?t.height:t.naturalHeight||t.videoHeight};return e&&(i.width/=e,i.height/=e),i}function e(e,i){return new Promise(function(n){var r=t(e,i);return r.width?n(r):e instanceof HTMLVideoElement?e.addEventListener("loadedmetadata",function(){return n(t(e,i))}):void setTimeout(function r(){var a=t(e,i);a.width?n(a):setTimeout(r,100)},100)})}return e.sync=t,e}();
