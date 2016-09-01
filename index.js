@@ -10,14 +10,14 @@ export default function (media, scale) {
 	if (!media) {
 		return {
 			width: 0,
-			height: 0,
+			height: 0
 		};
 	}
 
 	if (media.canvas) { // it's a ctx
 		media = media.canvas;
 	}
-	
+
 	const size = {
 		width: media.getContext ? media.width : media.naturalWidth || media.videoWidth,
 		height: media.getContext ? media.height : media.naturalHeight || media.videoHeight
@@ -27,6 +27,6 @@ export default function (media, scale) {
 		size.width /= scale;
 		size.height /= scale;
 	}
-	
+
 	return size;
 }
