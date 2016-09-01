@@ -33,6 +33,12 @@ function getMediaSize(media, scale) {
 }
 
 export default function getMediaSizeAsync(media, scale) {
+	if (!media) {
+		return Promise.reject({
+			width: 0,
+			height: 0
+		});
+	}
 	return new Promise(resolve => {
 		const instantSize = getMediaSize(media, scale);
 		if (instantSize.width) {
