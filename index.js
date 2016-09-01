@@ -19,8 +19,8 @@ export default function (media, scale) {
 	}
 	
 	const size = {
-		width: media.naturalWidth || media.videoWidth || media.width || 0,
-		height: media.naturalHeight || media.videoHeight || media.height || 0,
+		width: media.getContext ? media.width : media.naturalWidth || media.videoWidth,
+		height: media.getContext ? media.height : media.naturalHeight || media.videoHeight
 	};
 
 	if (scale) {
