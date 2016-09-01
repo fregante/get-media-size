@@ -20,8 +20,8 @@ function getMediaSize(media, scale) {
 	}
 
 	const size = {
-		width: media.getContext ? media.width : media.naturalWidth || media.videoWidth,
-		height: media.getContext ? media.height : media.naturalHeight || media.videoHeight
+		width: media.getContext ? media.width : media.naturalWidth || media.videoWidth || 0,
+		height: media.getContext ? media.height : media.naturalHeight || media.videoHeight || 0
 	};
 
 	if (scale) {
