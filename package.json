@@ -1,6 +1,6 @@
 {
   "name": "get-media-size",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Get the real size of an <img>, <video>, or <canvas> in the browser.",
   "license": "MIT",
   "repository": "bfred-it/get-media-size",
