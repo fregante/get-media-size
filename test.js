@@ -1,7 +1,8 @@
 import test from 'ava';
 import getMediaSize from '.';
 
-global.HTMLVideoElement = function (ready) {
+function HTMLVideoElement(ready) {
+	this.tagName = 'VIDEO';
 	if (ready) {
 		this.videoWidth = 1280;
 		this.videoHeight = 720;
@@ -14,9 +15,9 @@ global.HTMLVideoElement = function (ready) {
 		this.videoHeight = 720;
 		setTimeout(listener, 500);
 	};
-};
+}
 
-global.HTMLImageElement = function (ready) {
+function HTMLImageElement(ready) {
 	if (ready) {
 		this.naturalWidth = 1280;
 		this.naturalHeight = 720;
@@ -28,7 +29,7 @@ global.HTMLImageElement = function (ready) {
 		this.naturalWidth = 1280;
 		this.naturalHeight = 720;
 	}, 350);
-};
+}
 
 const successfulSize = {
 	width: 1280,
@@ -52,10 +53,7 @@ const nonReadyImageStub = {
 	naturalHeight: 0
 };
 
-const readyVideoStub = {
-	videoWidth: 1280,
-	videoHeight: 720
-};
+const readyVideoStub = new HTMLVideoElement(true);
 
 const nonReadyVideoStub = {
 	videoWidth: 0,

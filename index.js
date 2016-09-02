@@ -44,7 +44,7 @@ export default function getMediaSizeAsync(media, scale) {
 		if (instantSize.width) {
 			return resolve(instantSize);
 		}
-		if (media instanceof HTMLVideoElement) {
+		if (media.tagName === 'VIDEO') {
 			return media.addEventListener('loadedmetadata', () => resolve(getMediaSize(media, scale)));
 		}
 		setTimeout(function check() {
