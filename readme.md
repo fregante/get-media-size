@@ -2,9 +2,9 @@
 
 > Get the real size of an `<img>`, `<video>`, or `<canvas>` in the browser.
 
-[![gzipped size](https://badges.herokuapp.com/size/github/bfred-it/get-media-size/master/dist/get-media-size.browser.js?gzip=true&label=gzipped%20size)](#readme)
-[![Travis build status](https://api.travis-ci.org/bfred-it/get-media-size.svg?branch=master)](https://travis-ci.org/bfred-it/get-media-size)
-[![npm version](https://img.shields.io/npm/v/get-media-size.svg)](https://www.npmjs.com/package/get-media-size) 
+[![gzipped size](https://badges.herokuapp.com/size/github/fregante/get-media-size/master/dist/get-media-size.browser.js?gzip=true&label=gzipped%20size)](#readme)
+[![Travis build status](https://api.travis-ci.org/fregante/get-media-size.svg?branch=master)](https://travis-ci.org/fregante/get-media-size)
+[![npm version](https://img.shields.io/npm/v/get-media-size.svg)](https://www.npmjs.com/package/get-media-size)
 
 It works in IE9+ since it depends on `naturalWidth`/`naturalHeight` for the images and `videoWidth`/`videoHeight` on videos.
 
@@ -80,4 +80,4 @@ None! But for the _async_ method you need to polyfill `window.Promise` in IE9-11
 
 ## License
 
-MIT © [Federico Brigante](http://twitter.com/bfred_it)
+MIT © [Federico Brigante](https://bfred.it)

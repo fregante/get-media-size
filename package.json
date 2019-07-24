@@ -2,23 +2,19 @@
   "name": "get-media-size",
   "version": "2.0.1",
   "description": "Get the real size of an <img>, <video>, or <canvas> in the browser.",
-  "license": "MIT",
-  "repository": "bfred-it/get-media-size",
-  "author": {
-    "name": "Federico Brigante",
-    "email": "bfred-it@users.noreply.github.com",
-    "url": "twitter.com/bfred_it"
-  },
   "keywords": [
     "browser",
-    "dom",
-    "media",
-    "img",
-    "image",
-    "video",
     "canvas",
-    "context"
+    "context",
+    "dom",
+    "image",
+    "img",
+    "media",
+    "video"
   ],
+  "repository": "fregante/get-media-size",
+  "license": "MIT",
+  "author": "Federico Brigante <opensource@bfred.it> (bfred.it)",
   "files": [
     "dist/get-media-size.common-js.js",
     "dist/get-media-size.es-modules.js"
@@ -27,14 +23,20 @@
   "module": "dist/get-media-size.es-modules.js",
   "jsnext:main": "dist/get-media-size.es-modules.js",
   "scripts": {
-    "build:js": "bfred-npm-bundler get-media-size getMediaSize",
     "build": "npm-run-all --silent jsfix build:*",
+    "build:js": "bfred-npm-bundler get-media-size getMediaSize",
     "jsfix": "xo --fix",
-    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error",
-    "watch:test": "ava --watch",
-    "watch": "npm-run-all --parallel --silent watch:*",
     "prepublish": "npm run build",
-    "test": "xo && ava; npm run build"
+    "test": "xo && ava; npm run build",
+    "watch": "npm-run-all --parallel --silent watch:*",
+    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error",
+    "watch:test": "ava --watch"
+  },
+  "xo": {
+    "env": [
+      "browser"
+    ],
+    "esnext": true
   },
   "devDependencies": {
     "ava": "*",
@@ -42,12 +44,6 @@
     "npm-run-all": "^3.1.0",
     "onchange": "^3.0.0",
     "xo": "^0.16.0"
-  },
-  "xo": {
-    "esnext": true,
-    "env": [
-      "browser"
-    ]
   },
   "ava": {
     "timeout": "2s"
